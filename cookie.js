@@ -121,8 +121,8 @@ class Cookie {
      * @param {String} str 
      */
     static parseMany(str) {
-        var pairs = input.split(/\s*;\s*/);
-        cookies = {};
+        var pairs = str.split(/\s*;\s*/),
+            cookies = {};
         for (let pair of pairs) {
             let cookie = new this(pair);
             cookies[cookie.name] = cookie;
