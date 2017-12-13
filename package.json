@@ -1,0 +1,27 @@
+{
+  "name": "sfn-cookie",
+  "version": "0.1.0",
+  "description": "Simple Friendly Cookie parser and serializer for Node.js and browsers.",
+  "main": "cookie.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "cookie",
+    "sfn"
+  ],
+  "author": {
+    "name": "Ayon Lee",
+    "email": "i@hyurl.com",
+    "url": "http://hyurl.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyurl/sfn-cookie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hyurl/sfn-cookie/issues",
+    "email": "i@hyurl.com"
+  },
+  "license": "MIT"
+}
