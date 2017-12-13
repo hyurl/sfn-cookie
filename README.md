@@ -43,11 +43,11 @@ if(typeof document === "object"){
 ## API
 
 - `new Cookie(name: string, value: string, options:? object)`
-    All `options` includes:
-    - `maxAge: number` How many seconds that this cookies should last.
-    - `expires: number|string|Date`: Keep to a specified date.
+    All `options` include:
+    - `maxAge: number` How many seconds that this cookie should last.
+    - `expires: number|string|Date`: Keep alive to a specified date.
     - `sameSite`: Honor same-site principle, could be either `strict` or `lax`.
-    - `domain`: Set cookie for a domain name.
+    - `domain`: Set cookie for a specified domain name.
     - `path`: Set cookie for a specified pathname.
     - `httpOnly`: Only HTTP, not JavaScript, can access this cookie.
     - `Secure`: This cookie won't be sent if not using HTTPS protocol.
@@ -65,5 +65,5 @@ if(typeof document === "object"){
 ## Notice
 
 Although you can manipulate all cookie options with this module is browsers, 
-but not all options are supported by browsers. Only `maxAge` and `expires` are
+but not all options are supported by browsers, only `maxAge` and `expires` are
 supported by `document.cookie`.
