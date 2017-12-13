@@ -65,5 +65,6 @@ if(typeof document === "object"){
 ## Notice
 
 Although you can manipulate all cookie options with this module is browsers, 
-but not all options are supported by browsers, only `maxAge` and `expires` are
-supported by `document.cookie`.
+but not all options are supported by browsers, e.g. `sameSite` and `httpOnly` 
+are not supported by `document.cookie`, and `secure` only works with **HTTPS**
+protocol.
