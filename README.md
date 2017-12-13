@@ -55,8 +55,8 @@ if(typeof document === "object"){
 - `new Cookie(options: object)`
 - `cookie.toString()` Gets the serialized cookie string of the current 
     instance.
-- `Cookie.parse(cookieStr: string): Cookie` Parses a cookie string to a 
-    Cookie instance.
+- `Cookie.parse(str: string): Cookie` Parses a cookie string to a Cookie 
+    instance. If `str` is invalid, a `null` will be returned.
 - `Cookie.parseMany(str: string): Cookie[]` Parses a string as multiple 
     cookies, useful for parsing `document.cookie` and `req.headers.cookie`.
 - `Cookie.serialize(data: Cookie|object): string` Serializes an object or 

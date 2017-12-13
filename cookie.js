@@ -46,9 +46,11 @@ class Cookie {
      *  a Cookie instance.
      */
     static serialize(data) {
-        var { name, value, maxAge, expires, sameSite, domain, path, httpOnly, secure } = data,
-            value = encodeURIComponent(value),
-            str = name + "=" + value;
+        var { name, value, maxAge, expires, sameSite, domain, path, httpOnly, secure } = data;
+        if (!name) return "";
+
+        value = encodeURIComponent(value);
+        var str = name + "=" + value;
 
         if (maxAge) {
             maxAge = typeof maxAge === "number" ? maxAge : parseInt(maxAge);
@@ -98,8 +100,10 @@ class Cookie {
     /**
      * Parses a cookie string to a Cookie instance.
      * @param {String} str 
+     * @returns {Cookie|void} If `str` is invalid, null will be returned.
      */
     static parse(str) {
+        if (!str || typeof str !== "string") return null;
         var pairs = str.split(/\s*;\s*/),
             data = {};
         for (let i in pairs) {
@@ -118,14 +122,15 @@ class Cookie {
     /**
      * Parses a string as multiple cookies, useful for parsing 
      * `document.cookie` and `req.headers.cookie`.
-     * @param {String} str 
+     * @param {String} str
+     * @returns {Cookie[]}
      */
     static parseMany(str) {
+        if (!str || typeof str !== "string") return [];
         var pairs = str.split(/\s*;\s*/),
-            cookies = {};
+            cookies = [];
         for (let pair of pairs) {
-            let cookie = new this(pair);
-            cookies[cookie.name] = cookie;
+            cookies.push(new this(pair));
         }
         return cookies;
     }
