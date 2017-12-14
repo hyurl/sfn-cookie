@@ -8,17 +8,17 @@ class Cookie {
      * @example new Cookie("username", "Luna")
      * @example new Cookie("username", "Luna", { maxAge: 120, httpOnly: true })
      * @example new Cookie({ name: "username", value: "Luna", maxAge: 120, httpOnly: true })
-     * @param {String|{[prop:string]:string}} input A cookie name, cookie 
-     *  string or an object carries `name`, `value` and `options`.
+     * @param {String|{[x:string]:string|number|Date}} input A cookie name, 
+     *  cookie string or an object carries `name`, `value` and other `options`.
      * @param {String} value
-     * @param {{[prop:string]:string}} options Include:
+     * @param {{[x:string]:string|number|Date}} options Include:
      *  - `maxAge: number` How many seconds that this cookie should last.
      *  - `expires: number|string|Date`: Keep alive to a specified date.
      *  - `sameSite`: Honor same-site principle, could be either `strict` or `lax`.
      *  - `domain`: Set cookie for a specified domain name.
      *  - `path`: Set cookie for a specified pathname.
      *  - `httpOnly`: Only HTTP, not JavaScript, can access this cookie.
-     *  - `Secure`: This cookie won't be sent if not using HTTPS protocol.
+     *  - `secure`: This cookie won't be sent if not using HTTPS protocol.
      */
     constructor(input, value = null, options = null) {
         if (typeof input === "string") {

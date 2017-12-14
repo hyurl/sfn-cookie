@@ -50,7 +50,7 @@ if(typeof document === "object"){
     - `domain`: Set cookie for a specified domain name.
     - `path`: Set cookie for a specified pathname.
     - `httpOnly`: Only HTTP, not JavaScript, can access this cookie.
-    - `Secure`: This cookie won't be sent if not using HTTPS protocol.
+    - `secure`: This cookie won't be sent if not using HTTPS protocol.
 - `new Cookie(cookieStr: string)`
 - `new Cookie(options: object)`
 - `cookie.toString()` Gets the serialized cookie string of the current 
