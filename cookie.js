@@ -42,8 +42,8 @@ class Cookie {
 
     /** 
      * Serializes an object or Cookie instance to a valid cookie string.
-     * @param {Cookie|{[prop:string]:string}} data An object of configuration or
-     *  a Cookie instance.
+     * @param {Cookie|{[prop:string]:string|number|Date}} data An object of 
+     *  configuration or a Cookie instance.
      */
     static serialize(data) {
         var { name, value, maxAge, expires, sameSite, domain, path, httpOnly, secure } = data;
