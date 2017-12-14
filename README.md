@@ -45,7 +45,7 @@ if(typeof document === "object"){
 - `new Cookie(name: string, value: string, options:? object)`
     All `options` include:
     - `maxAge: number` How many seconds that this cookie should last.
-    - `expires: number|string|Date`: Keep alive to a specified date.
+    - `expires: number|string|Date`: Keep alive to a specified date or time.
     - `sameSite`: Honor same-site principle, could be either `strict` or `lax`.
     - `domain`: Set cookie for a specified domain name.
     - `path`: Set cookie for a specified pathname.

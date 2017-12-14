@@ -13,7 +13,7 @@ class Cookie {
      * @param {String} value
      * @param {{[x:string]:string|number|Date}} options Include:
      *  - `maxAge: number` How many seconds that this cookie should last.
-     *  - `expires: number|string|Date`: Keep alive to a specified date.
+     *  - `expires: number|string|Date`: Keep alive to a specified date or time.
      *  - `sameSite`: Honor same-site principle, could be either `strict` or `lax`.
      *  - `domain`: Set cookie for a specified domain name.
      *  - `path`: Set cookie for a specified pathname.
