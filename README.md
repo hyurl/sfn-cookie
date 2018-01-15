@@ -42,7 +42,9 @@ if(typeof document === "object"){
 
 ## API
 
-- `new Cookie(name: string, value: string, options:? object)`
+- `new Cookie(cookieStr: string)`
+- `new Cookie(options: object)`
+- `new Cookie(name: string, value: string, options?: object)`
     All `options` include:
     - `maxAge: number` How many seconds that this cookie should last.
     - `expires: number|string|Date`: Keep alive to a specified date or time.
@@ -51,8 +53,7 @@ if(typeof document === "object"){
     - `path`: Set cookie for a specified pathname.
     - `httpOnly`: Only HTTP, not JavaScript, can access this cookie.
     - `secure`: This cookie won't be sent if not using HTTPS protocol.
-- `new Cookie(cookieStr: string)`
-- `new Cookie(options: object)`
+
 - `cookie.toString()` Gets the serialized cookie string of the current 
     instance.
 - `Cookie.parse(str: string): Cookie` Parses a cookie string to a Cookie 

@@ -8,9 +8,9 @@ class Cookie {
      * @example new Cookie("username", "Luna")
      * @example new Cookie("username", "Luna", { maxAge: 120, httpOnly: true })
      * @example new Cookie({ name: "username", value: "Luna", maxAge: 120, httpOnly: true })
-     * @param {String|{[x:string]:string|number|Date}} input A cookie name, 
+     * @param {string|{[x:string]:string|number|Date}} input A cookie name, 
      *  cookie string or an object carries `name`, `value` and other `options`.
-     * @param {String} value
+     * @param {string} value
      * @param {{[x:string]:string|number|Date}} options Include:
      *  - `maxAge: number` How many seconds that this cookie should last.
      *  - `expires: number|string|Date`: Keep alive to a specified date or time.
@@ -34,9 +34,9 @@ class Cookie {
 
     /**
      * Gets the serialized cookie string of the current instance.
-     * @return {String}
+     * @return {string}
      */
-    toString() {
+    tostring() {
         return this.constructor.serialize(this);
     }
 
@@ -62,10 +62,10 @@ class Cookie {
         if (expires) {
             let err = "Expires must be a valid date string or timestamp, or a Date instance.";
             if (expires instanceof Date) {
-                expires = expires.toUTCString();
+                expires = expires.toUTCstring();
             } else if (typeof expires === "number" || typeof expires === "string") {
                 try {
-                    expires = new Date(expires).toUTCString();
+                    expires = new Date(expires).toUTCstring();
                 } catch (e) {
                     throw new TypeError(err);
                 }
@@ -99,7 +99,7 @@ class Cookie {
 
     /**
      * Parses a cookie string to a Cookie instance.
-     * @param {String} str 
+     * @param {string} str 
      * @returns {Cookie|void} If `str` is invalid, null will be returned.
      */
     static parse(str) {
@@ -122,7 +122,7 @@ class Cookie {
     /**
      * Parses a string as multiple cookies, useful for parsing 
      * `document.cookie` and `req.headers.cookie`.
-     * @param {String} str
+     * @param {string} str
      * @returns {Cookie[]}
      */
     static parseMany(str) {
