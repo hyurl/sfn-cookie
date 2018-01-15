@@ -36,7 +36,7 @@ class Cookie {
      * Gets the serialized cookie string of the current instance.
      * @return {string}
      */
-    tostring() {
+    toString() {
         return this.constructor.serialize(this);
     }
 
@@ -65,7 +65,7 @@ class Cookie {
                 expires = expires.toUTCstring();
             } else if (typeof expires === "number" || typeof expires === "string") {
                 try {
-                    expires = new Date(expires).toUTCstring();
+                    expires = new Date(expires).toUTCString();
                 } catch (e) {
                     throw new TypeError(err);
                 }
