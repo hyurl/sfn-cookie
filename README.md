@@ -49,7 +49,7 @@ if(typeof document === "object"){
 ## In Browsers
 
 ```javascript
-const { Cookie } = sfnCookie; // sfnCookie is a global variable.
+const { Cookie } = SfnCookie; // SfnCookie is a global variable.
 ```
 
 ## API

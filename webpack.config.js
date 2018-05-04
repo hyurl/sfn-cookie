@@ -10,7 +10,7 @@ module.exports = {
     output: {
         filename: "cookie.js",
         // filename: "whatstpl.min.js",
-        library: "sfnCookie",
+        library: "SfnCookie",
         libraryTarget: "umd",
         globalObject: "this",
     },
