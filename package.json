@@ -1,9 +1,9 @@
 {
   "name": "sfn-cookie",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "Simple Friendly Cookie parser and serializer for Node.js and browsers.",
-  "main": "cookie.js",
-  "types": "cookie.d.ts",
+  "main": "dist/cookie.js",
+  "types": "src/index.ts",
   "scripts": {
     "test": "node test"
   },
@@ -24,5 +24,13 @@
     "url": "https://github.com/Hyurl/sfn-cookie/issues",
     "email": "i@hyurl.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "capitalization": "^1.0.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^4.1.0",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
 }
