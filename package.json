@@ -1,6 +1,6 @@
 {
   "name": "sfn-cookie",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Simple Friendly Cookie parser and serializer for Node.js and browsers.",
   "main": "cookie.js",
   "types": "cookie.d.ts",

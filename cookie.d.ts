@@ -39,7 +39,7 @@ declare class Cookie {
     });
 
     /** Gets the serialized cookie string of the current instance. */
-    tostring(): string;
+    toString(): string;
 
     /** Serializes an object or Cookie instance to a valid cookie string. */
     static serialize(data: Cookie | {

@@ -49,8 +49,7 @@ class Cookie {
         var { name, value, maxAge, expires, sameSite, domain, path, httpOnly, secure } = data;
         if (!name) return "";
 
-        value = encodeURIComponent(value);
-        var str = name + "=" + value;
+        var str = encodeURIComponent(name) + "=" + encodeURIComponent(value);
 
         if (maxAge) {
             maxAge = typeof maxAge === "number" ? maxAge : parseInt(maxAge);
@@ -62,7 +61,7 @@ class Cookie {
         if (expires) {
             let err = "Expires must be a valid date string or timestamp, or a Date instance.";
             if (expires instanceof Date) {
-                expires = expires.toUTCstring();
+                expires = expires.toUTCString();
             } else if (typeof expires === "number" || typeof expires === "string") {
                 try {
                     expires = new Date(expires).toUTCString();
@@ -109,7 +108,7 @@ class Cookie {
         for (let i in pairs) {
             let pair = pairs[i].split("=");
             if (i == 0) {
-                data.name = pair[0];
+                data.name = decodeURIComponent(pair[0]);
                 data.value = decodeURIComponent(pair[1]);
             } else {
                 if (!isNaN(pair[1])) pair[1] = parseInt(pair[1]);
