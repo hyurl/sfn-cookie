@@ -16,8 +16,8 @@ export interface BaseCookieOption {
 }
 
 export interface CookieOption extends BaseCookieOption {
-    name: string;
-    value: string;
+    name?: string;
+    value?: string;
 }
 
 export class Cookie implements CookieOption {
