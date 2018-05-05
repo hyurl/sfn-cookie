@@ -1,4 +1,4 @@
-export interface BaseCookieOption {
+export interface BaseCookieOptions {
     /** How many seconds that this cookie should last. */
     maxAge?: number;
     /** Keep alive to a specified date or time. */
@@ -15,12 +15,12 @@ export interface BaseCookieOption {
     secure?: boolean;
 }
 
-export interface CookieOption extends BaseCookieOption {
+export interface CookieOptions extends BaseCookieOptions {
     name?: string;
     value?: string;
 }
 
-export class Cookie implements CookieOption {
+export class Cookie implements CookieOptions {
     name: string;
     value: string;
     maxAge: number;
@@ -38,9 +38,9 @@ export class Cookie implements CookieOption {
      * @example new Cookie("username", "Luna", { maxAge: 120, httpOnly: true })
      * @example new Cookie({ name: "username", value: "Luna", maxAge: 120, httpOnly: true })
      */
-    constructor(options: CookieOption);
+    constructor(options: CookieOptions);
     constructor(cookieStr: string);
-    constructor(name: string, value: string, options?: BaseCookieOption);
+    constructor(name: string, value: string, options?: BaseCookieOptions);
 
     constructor(input, value = null, options = null) {
         if (typeof input === "string") {
@@ -61,7 +61,7 @@ export class Cookie implements CookieOption {
 }
 
 /** Serializes an object or Cookie instance to a valid cookie string. */
-export function serialize(data: Cookie | CookieOption): string {
+export function serialize(data: Cookie | CookieOptions): string {
     let {
         name,
         value,
@@ -122,7 +122,7 @@ export function parse(cookieStr: string): Cookie {
     if (!cookieStr || typeof cookieStr !== "string") return null;
 
     let pairs = cookieStr.split(/\s*;\s*/),
-        data: CookieOption = { name: undefined, value: undefined };
+        data: CookieOptions = { name: undefined, value: undefined };
 
     for (let i in pairs) {
         let pair = pairs[i].split("=");

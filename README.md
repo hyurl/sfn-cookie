@@ -55,11 +55,11 @@ const { Cookie } = SfnCookie; // SfnCookie is a global variable.
 ## API
 
 - `new Cookie(cookieStr: string)`
-- `new Cookie(options: CookieOption)`
-- `new Cookie(name: string, value: string, options?: BaseCookieOption)`
+- `new Cookie(options: CookieOptions)`
+- `new Cookie(name: string, value: string, options?: BaseCookieOptions)`
     All `options` include:
-    - `name: string` NOT in `BaseCookieOption`.
-    - `value: string` NOT in `BaseCookieOption`.
+    - `name: string` NOT in `BaseCookieOptions`.
+    - `value: string` NOT in `BaseCookieOptions`.
     - `maxAge: number` How many seconds that this cookie should last.
     - `expires: number|string|Date`: Keep alive to a specified date or time.
     - `sameSite`: Honor same-site principle, could be either `strict` or `lax`.
@@ -74,7 +74,7 @@ const { Cookie } = SfnCookie; // SfnCookie is a global variable.
     instance. If `cookieStr` is invalid, a `null` will be returned.
 - `parseMany(str: string): Cookie[]` Parses a string as multiple 
     cookies, useful for parsing `document.cookie` and `req.headers.cookie`.
-- `serialize(data: Cookie | CookieOption): string` Serializes an object or 
+- `serialize(data: Cookie | CookieOptions): string` Serializes an object or 
     Cookie instance to a valid cookie string.
 
 ## Notice
