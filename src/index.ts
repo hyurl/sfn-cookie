@@ -1,3 +1,5 @@
+import assign = require("object-assign");
+
 export interface BaseCookieOptions {
     /** How many seconds that this cookie should last. */
     maxAge?: number;
@@ -45,12 +47,12 @@ export class Cookie implements CookieOptions {
     constructor(input, value = null, options = null) {
         if (typeof input === "string") {
             if (value === null) {
-                Object.assign(this, parse(input));
+                assign(this, parse(input));
             } else {
-                Object.assign(this, { name: input, value }, options);
+                assign(this, { name: input, value }, options);
             }
         } else {
-            Object.assign(this, input);
+            assign(this, input);
         }
     }
 
@@ -88,7 +90,7 @@ export function serialize(data: Cookie | CookieOptions): string {
             expires = expires.toUTCString();
         } else if (typeof expires == "number" || typeof expires == "string") {
             try {
-                expires = new Date(expires).toUTCString();
+                expires = new Date(<any>expires).toUTCString();
             } catch (e) {
                 throw new TypeError(err);
             }

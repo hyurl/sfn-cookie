@@ -1,5 +1,9 @@
-const { Cookie, parse, parseMany, serialize } = require("./");
-const assert = require("assert");
+var assert = require("assert");
+var SfnCookie = require("./");
+var Cookie = SfnCookie.default;
+var parse = SfnCookie.parse;
+var parseMany = SfnCookie.parseMany;
+var serialize = SfnCookie.serialize;
 
 var date = new Date(),
     cookie1 = new Cookie("username=Luna"),
@@ -86,4 +90,4 @@ assert.deepStrictEqual(parseMany("username=Luna; gender=female"), [
     new Cookie("gender", "female")
 ]);
 
-console.log("All tests passed!");
+console.log("#### OK ####");
