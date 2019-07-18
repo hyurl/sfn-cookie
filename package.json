@@ -1,6 +1,6 @@
 {
   "name": "sfn-cookie",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple Friendly Cookie parser and serializer for Node.js and browsers.",
   "main": "dist/cookie.js",
   "types": "index.d.ts",
@@ -30,6 +30,6 @@
     "object-assign": "^4.1.1",
     "ts-loader": "^4.1.0",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^3.3.6"
   }
 }
